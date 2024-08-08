@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane onKeyPressed="#keyboardEventAction" prefHeight="400.0" prefWidth="800.0" stylesheets="@../styles/default.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+
+    <GridPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columnConstraints>
+            <ColumnConstraints percentWidth="8" />
+            <ColumnConstraints percentWidth="40" />
+            <ColumnConstraints percentWidth="4" />
+            <ColumnConstraints percentWidth="40" />
+            <ColumnConstraints percentWidth="8" />
+        </columnConstraints>
+        <rowConstraints>
+            <RowConstraints percentHeight="5" />
+            <RowConstraints percentHeight="95" />
+        </rowConstraints>
+        <BorderPane GridPane.columnIndex="0" GridPane.columnSpan="5" GridPane.rowIndex="0">
+            <top>
+                <MenuBar>
+                    <Menu text="Menu">
+                        <MenuItem onAction="#openMainWindowAction" text="Yeni Oyun" />
+                        <MenuItem onAction="#closeWindowAction" text="Çıkış" />
+                    </Menu>
+                </MenuBar>
+            </top>
+        </BorderPane>
+
+
+        <GridPane GridPane.columnIndex="1" GridPane.rowIndex="1">
+            <columnConstraints>
+                <ColumnConstraints percentWidth="100" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints percentHeight="20" />
+                <RowConstraints percentHeight="60" />
+                <RowConstraints percentHeight="20" />
+            </rowConstraints>
+            <FlowPane alignment="TOP_CENTER" GridPane.rowIndex="2">
+                <Button mnemonicParsing="false" onAction="#deleteCharAction" text="Sil" />
+                <Button mnemonicParsing="false" onAction="#refreshButtonAction" styleClass="refresh-button">
+                    <FlowPane.margin>
+                        <Insets left="10.0" right="10.0" />
+                    </FlowPane.margin>
+                </Button>
+                <Button mnemonicParsing="false" onAction="#enterButtonAction" text="Giriş" />
+            </FlowPane>
+            <GridPane GridPane.columnIndex="0" GridPane.rowIndex="1">
+                <rowConstraints>
+                    <RowConstraints percentHeight="10" />
+                    <RowConstraints percentHeight="10" />
+                    <RowConstraints percentHeight="10" />
+                    <RowConstraints percentHeight="10" />
+                    <RowConstraints percentHeight="10" />
+                    <RowConstraints percentHeight="10" />
+                    <RowConstraints percentHeight="10" />
+                    <RowConstraints percentHeight="10" />
+                    <RowConstraints percentHeight="10" />
+                    <RowConstraints percentHeight="10" />
+                </rowConstraints>
+                <columnConstraints>
+                    <ColumnConstraints percentWidth="10" />
+                    <ColumnConstraints percentWidth="10" />
+                    <ColumnConstraints percentWidth="10" />
+                    <ColumnConstraints percentWidth="10" />
+                    <ColumnConstraints percentWidth="10" />
+                    <ColumnConstraints percentWidth="10" />
+                    <ColumnConstraints percentWidth="10" />
+                    <ColumnConstraints percentWidth="10" />
+                    <ColumnConstraints percentWidth="10" />
+                    <ColumnConstraints percentWidth="10" />
+                </columnConstraints>
+
+                <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#inputButtonAction" text="Button" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="4" GridPane.rowSpan="2">
+               <styleClass>
+                  <String fx:value="hexagon-button" />
+                  <String fx:value="hexagon-button-gold" />
+               </styleClass></Button>
+                <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#inputButtonAction" styleClass="hexagon-button" text="Button" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="2" GridPane.rowSpan="2" />
+                <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#inputButtonAction" styleClass="hexagon-button" text="Button" GridPane.columnIndex="6" GridPane.columnSpan="2" GridPane.rowIndex="3" GridPane.rowSpan="2" />
+                <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#inputButtonAction" styleClass="hexagon-button" text="Button" GridPane.columnIndex="6" GridPane.columnSpan="2" GridPane.rowIndex="5" GridPane.rowSpan="2" />
+                <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#inputButtonAction" styleClass="hexagon-button" text="Button" GridPane.columnIndex="4" GridPane.columnSpan="2" GridPane.rowIndex="6" GridPane.rowSpan="2" />
+                <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#inputButtonAction" styleClass="hexagon-button" text="Button" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="5" GridPane.rowSpan="2" />
+                <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onAction="#inputButtonAction" styleClass="hexagon-button" text="Button" GridPane.columnIndex="2" GridPane.columnSpan="2" GridPane.rowIndex="3" GridPane.rowSpan="2" />
+
+
+            </GridPane>
+         <BorderPane prefHeight="200.0" prefWidth="200.0">
+            <bottom>
+               <TextField fx:id="inputText" alignment="CENTER" onTextChange="#onInputText" BorderPane.alignment="CENTER" />
+            </bottom>
+            <center>
+               <Label fx:id="errorMessage" BorderPane.alignment="CENTER" />
+            </center>
+         </BorderPane>
+
+        </GridPane>
+
+        <GridPane GridPane.columnIndex="3" GridPane.rowIndex="1">
+            <columnConstraints>
+                <ColumnConstraints percentWidth="100" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints percentHeight="10" />
+                <RowConstraints percentHeight="10" />
+                <RowConstraints percentHeight="70" />
+                <RowConstraints percentHeight="10" />
+            </rowConstraints>
+            <ListView fx:id="rspList" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+         <BorderPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+            <center>
+               <FlowPane alignment="CENTER" columnHalignment="CENTER" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                  <children>
+                     <Label fx:id="scoreLbl" text="0 kelime buldunuz, 0 puan aldınız." />
+                  </children>
+               </FlowPane>
+            </center>
+         </BorderPane>
+        </GridPane>
+
+    </GridPane>
+
+
+</AnchorPane>
